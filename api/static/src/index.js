@@ -9,6 +9,7 @@ generateBtn.addEventListener('click', async () => {
 
   try {
     const response = await fetch(productionUrl);
+    if (!response.ok) throw new Error('Something went wrong!');
     const data = await response.json();
     input.value = data;
   } catch (error) {
