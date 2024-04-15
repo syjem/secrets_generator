@@ -1,6 +1,5 @@
 const generateBtn = document.getElementById('generate-btn');
 const input = document.querySelector('input[type="text"]');
-const appContainer = document.getElementById('app-container');
 
 const productionUrl = 'https://secrets-generator.vercel.app/secrets';
 const devUrl = 'http://localhost:5000/secrets';
