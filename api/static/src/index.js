@@ -1,11 +1,11 @@
 const devUrl = 'http://localhost:5000/secrets';
 const productionUrl = 'https://secrets-generator.vercel.app/secrets';
 
-const generateBtn = document.getElementById('generate-btn');
-const input = document.querySelector('input[type="text"]');
+const newBtn = document.getElementById('new-btn');
+const input = document.getElementById('clipboard-target');
 
-generateBtn.addEventListener('click', async () => {
-  generateBtn.disabled = true;
+newBtn.addEventListener('click', async () => {
+  newBtn.disabled = true;
 
   try {
     const response = await fetch(productionUrl);
@@ -13,8 +13,8 @@ generateBtn.addEventListener('click', async () => {
     const data = await response.json();
     input.value = data;
   } catch (error) {
-    console.error('Fetch error:', error);
+    console.error(error);
   }
 
-  generateBtn.disabled = false;
+  newBtn.disabled = false;
 });

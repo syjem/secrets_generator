@@ -10,7 +10,7 @@ CORS(app)
 def index():
 
     secret_key = ''.join(secrets.choice(
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(-_=+)') for _ in range(16))
+        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(-_=+)') for _ in range(32))
 
     return render_template('index.html', secret_key=secret_key)
 
@@ -19,10 +19,10 @@ def index():
 def secret_generators():
 
     secret_key = ''.join(secrets.choice(
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(-_=+)') for _ in range(16))
+        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(-_=+)') for _ in range(32))
 
     return jsonify(secret_key)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
