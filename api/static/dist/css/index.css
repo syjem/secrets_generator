@@ -1225,6 +1225,10 @@ input:checked + .toggle-bg {
   max-width: 600px;
 }
 
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1558,9 +1562,9 @@ input:checked + .toggle-bg {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg {
@@ -1998,8 +2002,8 @@ h6 {
     line-height: 1;
   }
 
-  .md\:text-xl\/relaxed {
-    font-size: 1.25rem;
+  .md\:text-lg\/relaxed {
+    font-size: 1.125rem;
     line-height: 1.625;
   }
 }
