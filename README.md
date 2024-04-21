@@ -1,6 +1,6 @@
 # Secret Generators
 
-A simplified application for secret generations that fetches 32 random secret keys from a Flask API.
+An application that fetches random secret keys from a Flask API.
 
 #### Built with
 
