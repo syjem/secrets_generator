@@ -32,27 +32,18 @@
             </p>
           </div>
 
-          <div class="flex flex-col justify-center gap-5 max-w-[390px] w-full">
-            <div class="flex justify-between items-center">
-              {% for option in options %}
-              <button
-                data-counter="characters"
-                class="flex-shrink-0 rounded-sm z-10 inline-flex items-center py-2.5 md:py-3 px-7 sm:px-8 md:px-9 text-sm font-medium text-center bg-purple-900/30 text-slate-50 shadow transition-colors hover:bg-purple-900/50 focus-visible:outline-none ring-1 ring-purple-900/60 focus-visible:ring-purple-400 disabled:pointer-events-none disabled:opacity-90">
-                {{ option }}
-              </button>
-              {% endfor %}
-            </div>
-            <div class="flex items-center">
+          <div class="flex flex-col justify-center gap-8 max-w-[390px] w-full">
+            <div class="relative flex items-center">
               <input
                 id="clipboard-target"
                 type="text"
-                class="bg-slate-200 rounded-s-md border border-e-0 border-slate-300 text-slate-950 text-sm border-s-0 block w-full p-2.5 pl-4"
+                class="bg-slate-200 rounded-md border border-e-0 border-slate-300 text-slate-950 text-sm border-s-0 block w-full p-2.5 pl-4 ring-offset-purple-600 ring-1 ring-offset-2 ring-purple-600"
                 value="{{ secret_key }}"
                 readonly
                 disabled />
               <button
                 id="clipboard-trigger"
-                class="group relative flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-slate-500 hover:text-slate-900 bg-slate-200 border border-slate-300 rounded-e-md hover:bg-slate-200 focus:ring-1 focus:outline-none focus:ring-slate-200"
+                class="group absolute right-0 flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-slate-500 hover:text-slate-900 bg-slate-200 border border-slate-300 rounded-e-md hover:bg-slate-200 focus:ring-1 focus:outline-none focus:ring-slate-200"
                 type="button">
                 <span id="default-icon" class="text-gray-900">
                   <svg
@@ -89,6 +80,15 @@
                   <span id="default-tooltip-message">Copy</span>
                 </div>
               </button>
+            </div>
+            <div class="flex justify-between items-center">
+              {% for option in options %}
+              <button
+                data-counter="characters"
+                class="flex-shrink-0 rounded-sm z-10 inline-flex items-center py-2.5 md:py-3 px-7 sm:px-8 md:px-9 text-sm font-medium text-center bg-purple-900/50 text-slate-50 shadow transition-colors hover:bg-purple-900/70 focus-visible:outline-none ring-1 ring-purple-900/80 focus-visible:ring-purple-400 disabled:pointer-events-none disabled:opacity-90">
+                {{ option }}
+              </button>
+              {% endfor %}
             </div>
           </div>
         </div>
