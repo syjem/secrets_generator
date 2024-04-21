@@ -7,11 +7,13 @@ const $tooltipMessage = document.getElementById('default-tooltip-message');
 
 $copyCLipboard.addEventListener('click', () => {
   navigator.clipboard.writeText($input.value);
+  $copyCLipboard.disabled = true;
 
   showSuccess();
 
   setTimeout(() => {
     resetToDefault();
+    $copyCLipboard.disabled = false;
   }, 2000);
 });
 
@@ -19,7 +21,7 @@ const showSuccess = () => {
   $defaultIcon.classList.add('hidden');
   $successIcon.classList.remove('hidden');
   $successIcon.classList.add('inline-flex');
-  $tooltipMessage.innerText = 'Copied!';
+  $tooltipMessage.innerText = 'Copied';
   $tooltip.classList.remove('right-0');
   $tooltip.classList.add('-right-2');
 };
