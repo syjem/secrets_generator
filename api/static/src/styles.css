@@ -5,6 +5,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -25,7 +26,6 @@ body {
   height: 100%;
   margin: 0;
   line-height: 1.5;
-  color: #121212;
 }
 
 h1,
@@ -36,4 +36,32 @@ h5,
 h6 {
   font-family: 'Bricolage Grotesque', sans-serif;
   --font-sans: 'Bricolage Grotesque';
+}
+
+#new-product {
+  @apply inline-block text-sm text-slate-50 rounded-lg bg-slate-900 px-3.5 py-1.5;
+}
+
+h1 {
+  @apply text-4xl text-slate-50 font-bold tracking-tighter sm:text-5xl md:text-6xl;
+}
+
+p {
+  @apply mx-auto max-w-[500px] text-white/60 text-sm md:text-lg/relaxed;
+}
+
+#clipboard-target {
+  @apply bg-slate-200 rounded-md border border-e-0 border-slate-300 text-slate-950 text-sm border-s-0 block w-full p-2.5 pl-4 ring-offset-purple-600 ring-1 ring-offset-2 ring-purple-600;
+}
+
+button[data-counter='characters'] {
+  @apply flex-shrink-0 rounded-sm z-10 inline-flex items-center py-2.5 md:py-3 px-7 sm:px-8 md:px-9 text-sm font-medium text-center bg-purple-900/50 text-slate-50 shadow transition-colors hover:bg-purple-900/70 focus-visible:outline-none ring-1 ring-purple-900/80 focus-visible:ring-purple-400 disabled:pointer-events-none disabled:opacity-90;
+}
+
+#clipboard-trigger {
+  @apply absolute right-0 flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-slate-500 hover:text-slate-900 bg-slate-200 border border-slate-300 rounded-e-md hover:bg-slate-200 focus:ring-1 focus:outline-none focus:ring-slate-200;
+}
+
+#tooltip {
+  @apply absolute z-10 right-0 -top-12 inline-block px-3 py-2 text-sm font-medium text-slate-950 transition-opacity duration-300 bg-gray-300 rounded-md shadow-sm invisible opacity-0 group-hover:visible group-hover:opacity-100;
 }

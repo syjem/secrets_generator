@@ -7,21 +7,20 @@ app = Flask(__name__)
 CORS(app)
 load_dotenv()
 
+CHARACTERS_LISTS = [8, 16, 32, 64]
 
-def secret_keys(char=16):
+
+def secret_keys(char):
     secret_key = ''.join(secrets.choice(
         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(-_=+)') for _ in range(char))
 
     return secret_key
 
 
-character_options = [8, 16, 32, 64]
-
-
 @app.route("/")
 def index():
-    secret_key = secret_keys()
-    return render_template('index.html', secret_key=secret_key, options=character_options)
+    secret_key = secret_keys(16)
+    return render_template('index.html', secret_key=secret_key, lists=CHARACTERS_LISTS)
 
 
 @app.route("/secrets", methods=['POST'])
@@ -33,15 +32,18 @@ def secret_generators():
             return jsonify('No data provided.')
 
         try:
-            character_count = int(data)
+            value = int(data)
         except (TypeError, ValueError):
             return jsonify('Invalid data format. Please provide a number.')
 
-        if character_count not in character_options:
+        if value not in CHARACTERS_LISTS:
             return jsonify('Invalid number of characters.')
 
-    secret_key = secret_keys(character_count)
-    return jsonify(secret_key)
+        secret_key = secret_keys(value)
+        return jsonify(secret_key), 200
+
+    return jsonify('Method not allowed!'), 403
+
 
 
 if __name__ == '__main__':

@@ -20,6 +20,6 @@ An application that fetches random secret keys from a Flask API.
 ##### Tailwind Watcher
 
 ```bash
-~/secrets_generator/api (main)
-$ npx tailwindcss -i ./static/src/styles.css -o ./static/dist/css/index.css --watch
+~/secrets_generator (main)
+$ npx tailwindcss -i api/static/src/styles.css -o api/static/dist/css/index.css --watch
 ```
